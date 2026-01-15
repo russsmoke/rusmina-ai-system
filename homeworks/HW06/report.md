@@ -72,11 +72,11 @@
 
 - Таблица/список финальных метрик на test по всем моделям
 	accuracy	f1	roc_auc	model
-4	0.936333	0.898242	0.974682	HistGradientBoosting
-3	0.934667	0.894283	0.970610	RandomForest
-2	0.863333	0.784890	0.910533	DecisionTree
-1	0.829667	0.714685	0.878905	LogReg(scaled)
-0	0.676667	0.000000	0.500000	Dummy(most_frequent)
+    4	0.936333	0.898242	0.974682	HistGradientBoosting
+    3	0.934667	0.894283	0.970610	RandomForest
+    2	0.863333	0.784890	0.910533	DecisionTree
+    1	0.829667	0.714685	0.878905	LogReg(scaled)
+    0	0.676667	0.000000	0.500000	Dummy(most_frequent)
 
 - Победитель (по ROC-AUC или по согласованному критерию) и краткое объяснение
     Победитель: HistGradientBoostingClassifier
