@@ -91,6 +91,7 @@
 ## 5. Analysis
 
 - Устойчивость: что будет, если поменять `random_state` (хотя бы 5 прогонов для 1-2 моделей) – кратко
+
 Проведено 5 прогонов для двух моделей с разными random_state (42, 123, 456, 4, 1000):
 LogisticRegression (baseline):
 | random_state | Accuracy | F1-score | ROC-AUC |
