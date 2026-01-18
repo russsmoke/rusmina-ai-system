@@ -1,0 +1,205 @@
+{
+  "S07-hw-dataset-01": {
+    "kmeans": {
+      "params": {
+        "k": 2
+      },
+      "selection_criterion": "max_silhouette_score",
+      "metrics": {
+        "silhouette": 0.5216395622404242,
+        "davies_bouldin": 0.6853295219054459,
+        "calinski_harabasz": 11786.95462267153
+      }
+    },
+    "dbscan": {
+      "params": {
+        "eps": 2.0,
+        "min_samples": 3
+      },
+      "selection_criterion": "max_silhouette_score",
+      "metrics": {
+        "silhouette": 0.5216395622404242,
+        "davies_bouldin": 0.6853295219054459,
+        "calinski_harabasz": 11786.95462267153,
+        "noise_fraction": 0.0
+      }
+    },
+    "agglomerative": {
+      "params": {
+        "k": 2,
+        "linkage": "ward"
+      },
+      "selection_criterion": "max_silhouette_score",
+      "metrics": {
+        "silhouette": 0.5216395622404242,
+        "davies_bouldin": 0.6853295219054459,
+        "calinski_harabasz": 11786.95462267153
+      }
+    },
+    "best_overall": {
+      "algorithm": "dbscan",
+      "params": {
+        "eps": 2.0,
+        "min_samples": 3
+      },
+      "comparison_with_others": {
+        "kmeans": {
+          "silhouette": 0.5216395622404242,
+          "n_clusters": 2
+        },
+        "dbscan": {
+          "silhouette": 0.5216395622404242,
+          "n_clusters": 2,
+          "noise_fraction": 0.0
+        },
+        "agglomerative": {
+          "silhouette": 0.5216395622404242,
+          "n_clusters": 2,
+          "linkage": "ward"
+        }
+      },
+      "metrics": {
+        "silhouette": 0.5216395622404242,
+        "davies_bouldin": 0.6853295219054459,
+        "calinski_harabasz": 11786.95462267153,
+        "noise_fraction": 0.0,
+        "n_clusters": 2
+      }
+    }
+  },
+  "S07-hw-dataset-02": {
+    "kmeans": {
+      "params": {
+        "k": 2
+      },
+      "selection_criterion": "max_silhouette_score",
+      "metrics": {
+        "silhouette": 0.3068610017701601,
+        "davies_bouldin": 1.3234721699867644,
+        "calinski_harabasz": 3573.3933329348392
+      }
+    },
+    "dbscan": {
+      "params": {
+        "eps": 0.7,
+        "min_samples": 15
+      },
+      "selection_criterion": "max_silhouette_score",
+      "metrics": {
+        "silhouette": 0.3488325191616975,
+        "davies_bouldin": 0.8199994994593429,
+        "calinski_harabasz": 133.19554590550894,
+        "noise_fraction": 0.0505
+      }
+    },
+    "agglomerative": {
+      "params": {
+        "k": 2,
+        "linkage": "average"
+      },
+      "selection_criterion": "max_silhouette_score",
+      "metrics": {
+        "silhouette": 0.41976775922231674,
+        "davies_bouldin": 0.8791287795996852,
+        "calinski_harabasz": 395.4825694831712
+      }
+    },
+    "best_overall": {
+      "algorithm": "agglomerative",
+      "params": {
+        "k": 2,
+        "linkage": "average"
+      },
+      "comparison_with_others": {
+        "kmeans": {
+          "silhouette": 0.3068610017701601,
+          "n_clusters": 2
+        },
+        "dbscan": {
+          "silhouette": 0.3488325191616975,
+          "n_clusters": 2,
+          "noise_fraction": 0.0505
+        },
+        "agglomerative": {
+          "silhouette": 0.41976775922231674,
+          "n_clusters": 2,
+          "linkage": "average"
+        }
+      },
+      "metrics": {
+        "silhouette": 0.41976775922231674,
+        "davies_bouldin": 0.8791287795996852,
+        "calinski_harabasz": 395.4825694831712,
+        "noise_fraction": 0.0,
+        "n_clusters": 2
+      }
+    }
+  },
+  "S07-hw-dataset-03": {
+    "kmeans": {
+      "params": {
+        "k": 3
+      },
+      "selection_criterion": "max_silhouette_score",
+      "metrics": {
+        "silhouette": 0.31553248183109267,
+        "davies_bouldin": 1.1577832240211114,
+        "calinski_harabasz": 6957.158106946778
+      }
+    },
+    "dbscan": {
+      "params": {
+        "eps": 0.3,
+        "min_samples": 15
+      },
+      "selection_criterion": "max_silhouette_score",
+      "metrics": {
+        "silhouette": 0.2686984560694796,
+        "davies_bouldin": 1.0097670394549498,
+        "calinski_harabasz": 3927.5661435167563,
+        "noise_fraction": 0.29933333333333334
+      }
+    },
+    "agglomerative": {
+      "params": {
+        "k": 2,
+        "linkage": "average"
+      },
+      "selection_criterion": "max_silhouette_score",
+      "metrics": {
+        "silhouette": 0.4252961244445327,
+        "davies_bouldin": 0.813802016581118,
+        "calinski_harabasz": 8.943143115556799
+      }
+    },
+    "best_overall": {
+      "algorithm": "kmeans",
+      "params": {
+        "k": 3
+      },
+      "comparison_with_others": {
+        "kmeans": {
+          "silhouette": 0.31553248183109267,
+          "n_clusters": 3
+        },
+        "dbscan": {
+          "silhouette": 0.2686984560694796,
+          "n_clusters": 7,
+          "noise_fraction": 0.29933333333333334
+        },
+        "agglomerative": {
+          "silhouette": 0.4252961244445327,
+          "n_clusters": 2,
+          "linkage": "average"
+        }
+      },
+      "metrics": {
+        "silhouette": 0.31553248183109267,
+        "davies_bouldin": 1.1577832240211114,
+        "calinski_harabasz": 6957.158106946778,
+        "noise_fraction": 0.0,
+        "n_clusters": 3
+      }
+    }
+  }
+}

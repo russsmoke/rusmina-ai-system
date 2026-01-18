@@ -1,0 +1,128 @@
+{
+  "S07-hw-dataset-01": {
+    "dataset_info": {
+      "n_samples": 12000,
+      "n_features": 8
+    },
+    "kmeans": {
+      "silhouette": 0.5216395622404242,
+      "davies_bouldin": 0.6853295219054459,
+      "calinski_harabasz": 11786.95462267153,
+      "noise_fraction": 0.0,
+      "n_clusters": 2,
+      "algorithm": "KMeans",
+      "additional_metrics": {
+        "inertia": 48425.906976593935
+      }
+    },
+    "dbscan": {
+      "silhouette": 0.5216395622404242,
+      "davies_bouldin": 0.6853295219054459,
+      "calinski_harabasz": 11786.95462267153,
+      "noise_fraction": 0.0,
+      "n_clusters": 2,
+      "algorithm": "DBSCAN",
+      "additional_metrics": {
+        "n_non_noise": 12000,
+        "eps": 2.0,
+        "min_samples": 3
+      }
+    },
+    "agglomerative": {
+      "silhouette": 0.5216395622404242,
+      "davies_bouldin": 0.6853295219054459,
+      "calinski_harabasz": 11786.95462267153,
+      "noise_fraction": 0.0,
+      "n_clusters": 2,
+      "algorithm": "AgglomerativeClustering",
+      "additional_metrics": {
+        "linkage": "ward",
+        "distance_threshold": null
+      }
+    }
+  },
+  "S07-hw-dataset-02": {
+    "dataset_info": {
+      "n_samples": 8000,
+      "n_features": 3
+    },
+    "kmeans": {
+      "silhouette": 0.3068610017701601,
+      "davies_bouldin": 1.3234721699867644,
+      "calinski_harabasz": 3573.3933329348392,
+      "noise_fraction": 0.0,
+      "n_clusters": 2,
+      "algorithm": "KMeans",
+      "additional_metrics": {
+        "inertia": 16588.50103229558
+      }
+    },
+    "dbscan": {
+      "silhouette": 0.3488325191616975,
+      "davies_bouldin": 0.8199994994593429,
+      "calinski_harabasz": 133.19554590550894,
+      "noise_fraction": 0.0505,
+      "n_clusters": 2,
+      "algorithm": "DBSCAN",
+      "additional_metrics": {
+        "n_non_noise": 7596,
+        "eps": 0.7,
+        "min_samples": 15
+      }
+    },
+    "agglomerative": {
+      "silhouette": 0.41976775922231674,
+      "davies_bouldin": 0.8791287795996852,
+      "calinski_harabasz": 395.4825694831712,
+      "noise_fraction": 0.0,
+      "n_clusters": 2,
+      "algorithm": "AgglomerativeClustering",
+      "additional_metrics": {
+        "linkage": "average",
+        "distance_threshold": null
+      }
+    }
+  },
+  "S07-hw-dataset-03": {
+    "dataset_info": {
+      "n_samples": 15000,
+      "n_features": 4
+    },
+    "kmeans": {
+      "silhouette": 0.31553248183109267,
+      "davies_bouldin": 1.1577832240211114,
+      "calinski_harabasz": 6957.158106946778,
+      "noise_fraction": 0.0,
+      "n_clusters": 3,
+      "algorithm": "KMeans",
+      "additional_metrics": {
+        "inertia": 31123.497444205772
+      }
+    },
+    "dbscan": {
+      "silhouette": 0.2686984560694796,
+      "davies_bouldin": 1.0097670394549498,
+      "calinski_harabasz": 3927.5661435167563,
+      "noise_fraction": 0.29933333333333334,
+      "n_clusters": 7,
+      "algorithm": "DBSCAN",
+      "additional_metrics": {
+        "n_non_noise": 10510,
+        "eps": 0.3,
+        "min_samples": 15
+      }
+    },
+    "agglomerative": {
+      "silhouette": 0.4252961244445327,
+      "davies_bouldin": 0.813802016581118,
+      "calinski_harabasz": 8.943143115556799,
+      "noise_fraction": 0.0,
+      "n_clusters": 2,
+      "algorithm": "AgglomerativeClustering",
+      "additional_metrics": {
+        "linkage": "average",
+        "distance_threshold": null
+      }
+    }
+  }
+}
