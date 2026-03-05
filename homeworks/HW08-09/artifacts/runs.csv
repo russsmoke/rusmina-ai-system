@@ -1,0 +1,2 @@
+experiment_id,dataset,seed,model_summary,optimizer,lr,momentum,weight_decay,epochs_trained,best_val_accuracy,best_val_loss
+E2,EMNIST,42,dropout=0.3,Adam,0.001,,0.0,20,0.8308510638297872,0.50855674270197
