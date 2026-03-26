@@ -1,0 +1,40 @@
+{
+  "experiment_id": "E4",
+  "dataset": "EMNIST",
+  "seed": 42,
+  "model": {
+    "architecture": "MLP",
+    "input_shape": [
+      1,
+      28,
+      28
+    ],
+    "hidden_sizes": [
+      256,
+      128
+    ],
+    "dropout": 0.0,
+    "use_batchnorm": true,
+    "num_classes": 47
+  },
+  "training": {
+    "optimizer": "Adam",
+    "learning_rate": 0.001,
+    "weight_decay": 0.0,
+    "momentum": null,
+    "criterion": "CrossEntropyLoss",
+    "batch_size": 128,
+    "epochs_max": 50,
+    "epochs_trained": 14,
+    "early_stopping": {
+      "patience": 4,
+      "min_delta": 0.0005
+    }
+  },
+  "results": {
+    "best_val_accuracy": 0.847872340425532,
+    "best_val_loss": 0.4731839566366047,
+    "test_accuracy": 0.8432446810032459,
+    "test_loss": 0.49511967415505265
+  }
+}
