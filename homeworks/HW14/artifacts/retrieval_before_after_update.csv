@@ -1,0 +1,3 @@
+query,before_retrieved_sources,after_retrieved_sources,changed
+Зачем нужен реранжировщик после первичного retrieval?,"doc_08, doc_08, doc_01","doc_13, doc_13, doc_08",True
+Что такое гибридный поиск?,"doc_02, doc_04, doc_03","doc_14, doc_02, doc_04",True
