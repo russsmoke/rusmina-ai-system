@@ -1,3 +1,4 @@
 query,before_retrieved_sources,after_retrieved_sources,changed
-Зачем нужен реранжировщик после первичного retrieval?,"doc_08, doc_08, doc_01","doc_13, doc_13, doc_08",True
-Что такое гибридный поиск?,"doc_02, doc_04, doc_03","doc_14, doc_02, doc_04",True
+Чем кубиты отличаются от обычных битов?,"doc_12, doc_06, doc_01","doc_13, doc_08, doc_04",True
+Как работают нейроморфные процессоры и где они применяются?,"doc_06, doc_06, doc_12","doc_14, doc_06, doc_08",True
+Что такое суперпозиция в квантовых вычислениях?,"doc_12, doc_06, doc_01","doc_02, doc_13, doc_04",True
