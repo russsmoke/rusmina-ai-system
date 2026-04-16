@@ -1,4 +1,4 @@
-query_id,query,expected_source,retrieved_sources,hit@3,recall@3,rank_of_first_relevant
+query_id,query,expected_source,retrieved_sources,hit_at_3,recall@3,rank_of_first_relevant
 q01,Кто изобрел транзистор?,doc_01,"doc_01, doc_01, doc_06",1,1.0,1
 q02,В каком году появился ARPANET?,doc_02,"doc_02, doc_08, doc_09",1,1.0,1
 q03,Кто основал Apple?,doc_03,"doc_03, doc_03, doc_05",1,1.0,1
