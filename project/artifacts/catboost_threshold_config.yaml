@@ -1,0 +1,15 @@
+best_params:
+  border_count: 64
+  class_weights:
+  - 1
+  - 3
+  depth: 4
+  iterations: 700
+  l2_leaf_reg: 1
+  learning_rate: 0.01
+metrics_at_threshold:
+  f1: 0.631336405529954
+  precision: 0.5943600867678959
+  recall: 0.6732186732186732
+model_type: CatBoost
+optimal_threshold: 0.5300167955583376

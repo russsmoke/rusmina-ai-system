@@ -54,7 +54,7 @@
 ### 3.1. Требования
 
 - Python `>= 3.10` (уточните при необходимости).
-- Установленные системные зависимости (если есть: например, `git`, `make` и т.п.).
+- Docker и Docker Compose (для запуска через контейнер)
 
 ### 3.2. Установка окружения
 
@@ -88,20 +88,12 @@ pip install -r requirements.txt
 
 Примеры (заполните под свой случай):
 
-### 4.1. Запуск обучения модели
+### 4.1. Запуск сервиса (API/веб-интерфейс)
 
 ```bash
 cd project
-source .venv/bin/activate      # при необходимости
-python -m src.train            # или другая команда
-```
-
-### 4.2. Запуск сервиса (API/веб-интерфейс)
-
-```bash
-cd project
-source .venv/bin/activate      # при необходимости
-python -m src.service          # пример: FastAPI/Flask сервис
+source .venv/bin/activate
+uvicorn src.service.main:app --host 0.0.0.0 --port 8000
 ```
 
 Или, если используется Docker:
@@ -111,47 +103,80 @@ cd project
 docker build -t aie-project .
 docker run -p 8000:8000 aie-project
 ```
+Сервис запускается на порту 8000.
 
-Опишите:
+### 4.2. Эндпоинты
+- `/health` - проверка работы сервиса
+- `/predict` - предсказание для одного клиента
+  Пример использования: 
+  ```bash
+  curl -X 'POST' \
+  'http://localhost:8000/predict' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "CreditScore": 650,
+    "Age": 35,
+    "Tenure": 5,
+    "Balance": 50000,
+    "NumOfProducts": 2,
+    "HasCrCard": 1,
+    "IsActiveMember": 1,
+    "EstimatedSalary": 50000,
+    "Geography": "France",
+    "Gender": "Male"
+  }'
+  ```
+- `/predict_batch` - предказание для нескольких клиентов (CSV файл)
+  Пример использования:
+  ```bash
+  curl -X 'POST' \
+  'http://localhost:8000/predict_batch' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: multipart/form-data' \
+  -F 'file=@synthetic_data.csv;type=text/csv'
+  ```
 
-- на каком порту поднимается сервис;
-- какие эндпоинты есть (минимум – 1-2 ключевых);
-- как протестировать работоспособность (например, запрос через `curl` или браузер).
-
+Swagger UI: http://localhost:8000/docs
 ---
 
 ## 5. Данные
 
-Кратко опишите используемые данные:
+- Источник: Открытый датасет Churn Modelling из открытых источников
 
-- источник (открытый датасет, синтетика, собственная генерация и т.п.);
+- Объём: 10,000 записей клиентов
+
+- Признаки: 10 исходных признаков (CreditScore, Age, Tenure, Balance, NumOfProducts, HasCrCard, IsActiveMember, EstimatedSalary, Geography, Gender)
+
+- Целевая переменная: Exited (отток клиента)
+
+- Дисбаланс классов: 79.6% Stayed, 20.4% Churned
 - где лежат файлы:
 
-  - `data/` – небольшие выборки, необходимые для демонстрации;
-  - **не** храните в репозитории большие файлы и конфиденциальные данные;
-- если данные нужно скачать отдельно – опишите шаги или добавьте скрипт.
-
-Пример:
-
-> Для обучения используется открытый датасет MovieLens (вариант small).
-> В репозитории лежит только небольшая подвыборка в `data/sample_ratings.csv`.
-> Полную версию датасета при необходимости можно скачать по инструкции из `data/README.md`.
-
+  - `data/raw/Churn_Modelling.csv` – полный датасет;
+  - `src/data/synthetic_churn_data.py` - создает синтетические данные объемом 2000 записей. Хранятся в `data/synthetic_data.csv`
+    - для создания:
+    `python src/data/synthetic_churn_data.py`
 ---
 
-## 6. Тесты (если есть)
+## 6. Тесты
 
-Если вы добавляете тесты:
+Тесты проверяют:
 
-- опишите, какие есть тесты (модульные, e2e, sanity-checkи);
-- приведите команду запуска.
+- Эндпоинт `/health`
+
+- Эндпоинт `/predict`(поля ответа, диапазон вероятности)
+
+- Эндпоинт `/predict_batch` (загрузка CSV)
+
+- Обработку ошибок (невалидные данные)
 
 Пример:
 
 ```bash
 cd project
 source .venv/bin/activate
-pytest tests
+pytest tests/ -v
 ```
 
 ---
