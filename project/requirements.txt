@@ -1,0 +1,26 @@
+# Core
+fastapi==0.136.0
+uvicorn==0.44.0
+python-multipart==0.0.26
+pydantic==2.13.1
+pydantic-settings==2.13.1
+python-dotenv==1.2.2
+
+# Data processing
+pandas==3.0.2
+numpy==2.4.4
+scikit-learn==1.8.0
+
+# Model & explainability
+xgboost==3.2.0
+shap==0.51.0
+
+# Utilities
+joblib==1.5.3
+PyYAML==6.0.3
+
+# HTTP client (для тестов, можно опционально)
+httpx==0.28.1
+
+# Testing (минимально)
+pytest==9.0.3

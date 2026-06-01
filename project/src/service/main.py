@@ -1,9 +1,37 @@
 from fastapi import FastAPI, UploadFile
+from pydantic import BaseModel, Field, validator
 import pandas as pd
 import logging
 
 from src.models.load_artifacts import load_artifacts
 from src.models.predict import predict
+
+
+class CustomerData(BaseModel):
+    """Модель данных клиента с валидацией"""
+    CreditScore: float = Field(..., ge=300, le=850, description="Кредитный рейтинг")
+    Age: int = Field(..., ge=18, le=100, description="Возраст")
+    Tenure: int = Field(..., ge=0, le=10, description="Количество лет в банке")
+    Balance: float = Field(..., ge=0, description="Баланс счета")
+    NumOfProducts: int = Field(..., ge=1, le=4, description="Количество продуктов")
+    HasCrCard: int = Field(..., ge=0, le=1, description="Наличие кредитной карты")
+    IsActiveMember: int = Field(..., ge=0, le=1, description="Активный клиент")
+    EstimatedSalary: float = Field(..., ge=0, description="Предполагаемая зарплата")
+    Geography: str = Field(..., description="Страна")
+    Gender: str = Field(..., description="Пол")
+    
+    @validator('Geography')
+    def validate_geography(cls, v):
+        if v not in ['France', 'Spain', 'Germany']:
+            raise ValueError('Geography must be France, Spain or Germany')
+        return v
+    
+    @validator('Gender')
+    def validate_gender(cls, v):
+        if v not in ['Male', 'Female']:
+            raise ValueError('Gender must be Male or Female')
+        return v
+
 
 # Настройка логирования
 logging.basicConfig(
@@ -28,7 +56,7 @@ def health():
 
 # --- 1. Предсказание для одного клиента ---
 @app.post("/predict")
-def predict_one(data: dict):
+def predict_one(data: CustomerData):
     logger.info(f"Запрос /predict получен")
     try:
         df = pd.DataFrame([data])
