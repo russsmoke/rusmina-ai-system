@@ -33,7 +33,7 @@ class ModelArtifacts:
         logger.info("Загрузка артефактов...")
 
         # --- 1. Модель ---
-        model_path = self.artifacts_path / "models" / "xgb_final_v1.pkl"
+        model_path = self.artifacts_path / "models" / "catboost_best.pkl"
         self.model = joblib.load(model_path)
         logger.info(f"Модель загружена: {model_path}")
 
